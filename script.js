@@ -83,6 +83,11 @@
     b.addEventListener('click', function () { setLang(b.dataset.lang); });
   });
 
+  // Meta Pixel: clique no WhatsApp = Contato
+  document.querySelectorAll('[data-wa]').forEach(function (a) {
+    a.addEventListener('click', function () { if (window.fbq) fbq('track', 'Contact'); });
+  });
+
   // Nav e botão flutuante
   var nav = document.getElementById('nav');
   var fab = document.querySelector('.fab');
